@@ -2,6 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
+import Home from './pages/home/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,9 +12,9 @@ function App() {
   return (
     <>
 
-  <h1 className="text-3xl font-bold underline bg-amber-950">
-    Hello world!
-  </h1>
+  <Navbar />
+  <Home />
+  <Footer />
 
     </>
   )
