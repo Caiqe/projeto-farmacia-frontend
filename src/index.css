@@ -1,2 +1,8 @@
 @import "tailwindcss";
+@import "react-alice-carousel/lib/alice-carousel.css";
 
+@theme {
+    --color-offwhite: #f8f8f8;
+    --color-hotoffwhite: #fffaf0;
+    --color-bermuda: #78dcca;
+  }
