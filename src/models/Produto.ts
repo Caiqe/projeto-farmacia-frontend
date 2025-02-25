@@ -1,9 +1,15 @@
 import Categoria from "./Categoria";
 
-export default interface Produto{
+export interface Produto {
     id: number;
     nome: string;
-    preco: number;
-    foto: string;
-    categoria: Categoria;
-}
+    descricao: string;
+    valor: number; 
+    imagem?: string; 
+    categoria: Categoria; 
+    tipo_produto: String;
+  
+    // Relacionamentos com PedidoProduto e CarrinhoProduto, se necessário
+    //pedidoProdutos?: PedidoProduto[];
+    //carrinhoProdutos?: CarrinhoProduto[];
+  }

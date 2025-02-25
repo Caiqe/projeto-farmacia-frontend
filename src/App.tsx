@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListaCategorias from "./components/categorias/listacategorias/ListaCategorias";
 import FormCategoria from "./components/categorias/formcategoria/FormCategoria";
 import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCategoria";
+import ListaProdutos from "./components/produtos/listaprodutos/ListaProdutos";
+import ProdutosPorCategoria from "./components/produtos/produtosPorCategoria/ProdutosPorCategoria";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +26,8 @@ function App() {
           <Route path="/cadastrarcategoria" element={<FormCategoria />} />
           <Route path="/editarcategoria/:id" element={<FormCategoria />} />
           <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+          <Route path="/produtos" element={<ListaProdutos/>} />
+          <Route path="/produtos/categoria/:categoriaId" element={<ProdutosPorCategoria />} />
         </Routes>
         <Footer />
       </BrowserRouter>

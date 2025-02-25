@@ -11,7 +11,7 @@ import Popup from "reactjs-popup";
 import { buscar } from "../../services/Service";
 import Categoria from "../../models/Categoria";
 
-function ListaCategorias() {
+function Navbar() {
   const navigate = useNavigate();
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -26,10 +26,8 @@ function ListaCategorias() {
 
   useEffect(() => {
     buscarCategorias();
-  }, [categorias.length]);
-}
+  }, []);
 
-function Navbar() {
   return (
     <>
       <div className=" mt-0 w-full grid grid-cols-12 bg-gray-800 py-4  mb-4 ">
@@ -58,7 +56,7 @@ function Navbar() {
             />
           </div>
         </div>
-        <div className="flex flex-row gap-8 col-start-9 col-span-6">
+        <div className="flex flex-row gap-6 col-start-9 col-span-6">
           <Popup
             trigger={
               <div className="flex flex-row text-white text- justify-center items-center gap-2">
@@ -66,8 +64,7 @@ function Navbar() {
                 <List
                   size={32}
                   color="#fffafa"
-                  
-                  className="hover:cursor-pointer hover:scale-110 rounded-full  "
+                  className="hover:cursor-pointer hover:scale-110  "
                 />{" "}
                 <h2 className="hidden md:block">Categorias</h2>
               </div>
@@ -81,20 +78,27 @@ function Navbar() {
           >
             <div className="bg-gray-900 text-white hover:cursor-pointer p-10  rounded-3xl">
               <div>
-                <Link to="/categorias">
-                  <h2 className="text-3xl underline mb-2 ">Categorias</h2>
-                </Link>
-                <ul className="gap-2 list-disc p-2 ">
-                  <li className="hover:underline">Verão</li>
-                  <li className="hover:underline">Beleza</li>
-                  <li className="hover:underline">Higiene</li>
-                  <li className="hover:underline">Naturais</li>
-                  <li className="hover:underline">Maternidade</li>
+                <h2 className="text-3xl underline mb-2">Categorias</h2>
+
+                <ul className="list-disc gap-10">
+                  {categorias.map((categoria) => (
+                    <li key={categoria.id} className="hover:underline">
+                      <Link to={`/produtos/categoria/${categoria.id}`}>
+                        {categoria.descricao}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
+
+                <hr className="my-2" />
+
+                <Link to="/produtos">
+                  <h2 className="hover:underline">Todos os Produtos</h2>
+                </Link>
               </div>
 
               <div className="block md:hidden">
-                <h2 className="text-3xl underline mb-2">Carrinho</h2>
+                <h2 className="text-3xl underline mb-2">Meus Produtos</h2>
                 <ul className="gap-2 list-disc p-2 ">
                   <li className="hover:underline">Ver Produtos</li>
                 </ul>
@@ -112,7 +116,11 @@ function Navbar() {
               <div className="hidden md:block">
                 <div className="flex flex-row text-white justify-center items-center gap-2  ">
                   {" "}
-                  <Basket size={32} color="#fffafa"  />
+                  <Basket
+                    size={32}
+                    color="#fffafa"
+                    className="hover:cursor-pointer hover:scale-110"
+                  />
                   <div className="flex flex-col  ">
                     <h2>Cesta</h2>
                     <h2>R$00,00</h2>
@@ -129,7 +137,7 @@ function Navbar() {
           >
             <div className="bg-gray-900 text-white hover:cursor-pointer p-10  rounded-3xl">
               <div>
-                <h2 className="text-3xl underline mb-2">Carrinho</h2>
+                <h2 className="text-3xl underline mb-2">Meu Produtos</h2>
                 <ul className="gap-2 list-disc p-2 ">
                   <li className="hover:underline">Ver Produtos</li>
                 </ul>
@@ -138,12 +146,14 @@ function Navbar() {
           </Popup>
           <Popup
             trigger={
-              <div className="hidden md:block">
-                <div className="flex flex-row text-white justify-center items-center gap-2 ">
-                  
-                  <UserCircle size={32} color="#fffafa" />
-                  <h2 className="">Entrar ou Cadastrar</h2>
-                </div>
+              <div className="flex flex-row text-white text- justify-center items-center gap-2">
+                {" "}
+                <UserCircle
+                  size={32}
+                  color="#fffafa"
+                  className="hover:cursor-pointer hover:scale-110"
+                />{" "}
+                <h2 className="hidden md:block">Entrar ou Cadastrar</h2>
               </div>
             }
             on="hover"
