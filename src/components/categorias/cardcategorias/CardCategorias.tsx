@@ -8,10 +8,8 @@ interface CardTemasProps{
 function CardCategorias({categoria}: CardTemasProps) {
     return (
         <div className='border flex flex-col rounded-2xl overflow-hidden justify-between '>
-            <header className='py-2 px-6 bg-red-900 text-white font-bold text-2xl'>
-                Categoria
-            </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
+            
+            <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
             
             <div className="flex">
                 <Link to={`/editarcategoria/${categoria.id}`}

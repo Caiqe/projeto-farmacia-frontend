@@ -27,10 +27,15 @@ function ListaCategorias() {
   return (
     <>
             <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="container flex flex-col justify-center items-center">
+                    <h1 className='text-5xl mb-8'>Categorias</h1>
+                    <div className="grid grid-flow-row gap-4">
                        {categorias.map((categoria) => (
-                            <CardCategorias key={categoria.id} categoria={categoria} />
+                        <div>
+                            <ul className='w-90 bg-hotoffwhite gap-10'>
+                                <li key={categoria.id} className='text-2xl border-2'>{categoria.descricao}</li>
+                            </ul>
+                        </div>
                         ))}
                     </div>
                 </div>
