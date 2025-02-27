@@ -11,6 +11,7 @@ import FormCategoria from "./components/categorias/formcategoria/FormCategoria";
 import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCategoria";
 import ListaProdutos from "./components/produtos/listaprodutos/ListaProdutos";
 import ProdutosPorCategoria from "./components/produtos/produtosPorCategoria/ProdutosPorCategoria";
+import PaginaProduto from "./components/produtos/paginaProduto/PaginaProduto";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,7 @@ function App() {
           <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
           <Route path="/produtos" element={<ListaProdutos/>} />
           <Route path="/produtos/categoria/:categoriaId" element={<ProdutosPorCategoria />} />
+          <Route path="produtos/id/:produtoId" element={<PaginaProduto />} />
         </Routes>
         <Footer />
       </BrowserRouter>

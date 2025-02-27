@@ -7,7 +7,9 @@ export interface Produto {
     valor: number; 
     imagem?: string; 
     categoria: Categoria; 
-    tipo_produto: String;
+    tipoProduto: string;
+    bula?: string;
+    marca?: string;
   
     // Relacionamentos com PedidoProduto e CarrinhoProduto, se necessário
     //pedidoProdutos?: PedidoProduto[];

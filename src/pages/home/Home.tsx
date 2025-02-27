@@ -21,23 +21,24 @@ const handleDragStart = (e: React.DragEvent) => {
 
 const items = [
   <img
-    src="https://img.freepik.com/fotos-premium/produtos-de-beleza-elegantes-dispostos-sobre-um-fundo-rosa-suave_1376535-16262.jpg?w=740"
+    src="https://ik.imagekit.io/ix39wusls/farmacia/desconto?updatedAt=1740676909033"
     onDragStart={handleDragStart}
     role="presentation"
-    className="w-full h-60 object-cover rounded-lg"
+    className="w-full h-90 object-cover rounded-lg "
   />,
   <img
-    src="https://img.freepik.com/fotos-premium/conjunto-de-produtos-de-cuidados-da-pele-feminina_86156-789.jpg?w=826"
+    src="https://ik.imagekit.io/ix39wusls/farmacia/medicamentos?updatedAt=1740676909652"
     onDragStart={handleDragStart}
     role="presentation"
-    className="w-full h-60 object-cover rounded-lg"
+    className="w-full h-90 object-cover rounded-lg"
   />,
   <img
-    src="https://img.freepik.com/fotos-gratis/saco-de-toalete-e-vista-superior-do-arranjo-de-produtos_23-2149879511.jpg?t=st=1739549024~exp=1739552624~hmac=bf71a95588f20aade935ce1be589a850a288220fbcdf7dcabb4b954cc765945e&w=996"
+    src="https://ik.imagekit.io/ix39wusls/farmacia/cosmeticos?updatedAt=1740676910069"
     onDragStart={handleDragStart}
     role="presentation"
-    className="w-full h-60 object-cover rounded-lg"
+    className="w-full h-90 object-cover rounded-lg"
   />,
+  
 ];
 
 const Gallery = () => (

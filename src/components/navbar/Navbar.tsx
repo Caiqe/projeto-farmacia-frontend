@@ -10,10 +10,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
 import { buscar } from "../../services/Service";
 import Categoria from "../../models/Categoria";
+import { Produto } from "../../models/Produto";
+import BarraDePesquisa from "./barradepesquisa/BarraDePesquisa";
 
 function Navbar() {
-  const navigate = useNavigate();
-
   const [categorias, setCategorias] = useState<Categoria[]>([]);
 
   async function buscarCategorias() {
@@ -28,6 +28,7 @@ function Navbar() {
     buscarCategorias();
   }, []);
 
+
   return (
     <>
       <div className=" mt-0 w-full grid grid-cols-12 bg-gray-800 py-4  mb-4 ">
@@ -39,23 +40,7 @@ function Navbar() {
             <h2>Farmárcia</h2>
           </Link>
         </div>
-        <div className="hidden md:block col-start-3 col-span-5 bg-white rounded-4xl justify-between items-center px-6">
-          <div className=" grid grid-cols-10 items-center">
-            <form action="" className="col-span-8 col-start-1 p-3  text-black">
-              <input
-                type="text"
-                placeholder="O que você precisa?"
-                className="border-0"
-              />
-            </form>
-            <MagnifyingGlass
-              size={30}
-              color="#121212"
-              weight="bold"
-              className="col-start-10 border-l-2 pl-2 hover:cursor-pointer"
-            />
-          </div>
-        </div>
+        <BarraDePesquisa />
         <div className="flex flex-row gap-6 col-start-9 col-span-6">
           <Popup
             trigger={
@@ -146,14 +131,16 @@ function Navbar() {
           </Popup>
           <Popup
             trigger={
-              <div className="flex flex-row text-white text- justify-center items-center gap-2">
+              <div className="flex flex-row text-white justify-center items-center gap-2  ">
                 {" "}
                 <UserCircle
                   size={32}
                   color="#fffafa"
                   className="hover:cursor-pointer hover:scale-110"
-                />{" "}
-                <h2 className="hidden md:block">Entrar ou Cadastrar</h2>
+                />
+                <div className="flex flex-col  ">
+                  <h2 className="hidden md:block">Entrar ou Cadastrar</h2>
+                </div>
               </div>
             }
             on="hover"

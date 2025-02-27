@@ -39,14 +39,14 @@ function ListaProdutos({ categoriaId }: ListaProdutosProps) {
   }, [categoriaId]);
 
   return (
-    <div className="flex flex-col justify-around items-center bg-cream">
-      <div className="flex flex-col">
+    <div className="flex flex-col justify-around items-center ">
+      <div className="flex flex-col ">
         <h1 className="text-5xl px-8 py-16 text-green-400 font-bold">
           {categoriaId ? categoria?.descricao : "Todos os Produtos"}
         </h1>
       </div>
 
-      <div className="w-5xl mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="w-5xl mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {produtos.length > 0 ? (
           produtos.map((produto) => (
             <CardProdutos key={produto.id} produto={produto} />
