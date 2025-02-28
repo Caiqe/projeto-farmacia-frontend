@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Projeto Farmácia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse projeto tem como ideia criar uma farmácia online, contendo funcionalidades, como: Ver produtos, Comprar Produtos, Carrinho de produtos, Criação de usuários, Login.
 
-Currently, two official plugins are available:
+O projeto ainda está em andamento, para maiores dúvidas entrar em contato: cttcaiquegomes@gmail.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Clonando Repositório
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Execute o seguinte comando em seu Git Bash:
+
+```Bash
+git clone https://github.com/Caiqe/projeto-farmacia-frontend.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Rodando o projeto 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Com o projeto aberto em seu Visual Studio Code, rode a seguinte sequência de comandos:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Instala dependências:
+```Bash
+yarn
 ```
+Executa o programa:
+```Bash
+yarn dev
+```
+Para visualizar o programa aberto basta digital 'o' após completar a inicialização do serviço.
+
+## Avisos
+Essa aplicação esta configurada para consumir um back-end local (até o momento: 28/02/2025, pretendo colocar o serviço em produção em breve) utilizando o SGBD MySQL.
+
+Para obter o código do back-end basta acessar: https://github.com/Caiqe/CRUD-Farmacia
+
+## Autor
+
+Desenvolvido por: Caique Gomes
